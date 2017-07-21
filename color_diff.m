@@ -1,21 +1,13 @@
 %% read picture
 close all;
-pic_left = imread('left.jpeg'); % small flower red
-pic_right = imread('right.jpeg'); % large flower blue
-height = size(pic_right,1);
-width = size(pic_right,2);
 n = 400; % length of sub picture
-center = [height/2,width/2]; % center of sub picture
-left_top = [center(1)-n/2, center(2)-n/2];
 
 %% show crop picture
-sub_pic_left = pic_left(left_top(1):left_top(1)+n-1, ...
-    left_top(2):left_top(2)+n-1, :);
+sub_pic_left = read_crop('left.jpeg', n);
 % figure;
 % imshow(sub_pic_left);
 
-sub_pic_right = pic_right(left_top(1):left_top(1)+n-1, ...
-    left_top(2):left_top(2)+n-1, :);
+sub_pic_right = read_crop('right.jpeg', n);
 % figure;
 % imshow(sub_pic_right);
 
