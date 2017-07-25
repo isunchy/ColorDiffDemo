@@ -1,5 +1,6 @@
 %% Function: get picture pixel density
-function density = get_density(pic_v)
+function density = get_density(img)
+    pic_v = reshape(img, [], 3);
     density = zeros(256,256,256);
     for i=1:size(pic_v,1)
         pix = pic_v(i, :) + 1;
